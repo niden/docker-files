@@ -54,7 +54,7 @@ RUN yum -y update; \
         software-properties-common \
         unzip \
         vim \
-         wget; \
+        wget; \
         zip; \
     yum clean all
 
