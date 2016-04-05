@@ -7,9 +7,12 @@ ENV ZEPHIRDIR /usr/share/zephir
 
 RUN mkdir -p /usr/share/zephir
 RUN apk add --no-cache --update \
-    re2c \
+    autoconf \
+    gcc \
+    make \
     php \
     php-json \
+    re2c \
     sudo
 
 RUN git clone --depth=1 -v https://github.com/phalcon/zephir /tmp/zephir
