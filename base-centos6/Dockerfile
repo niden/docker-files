@@ -15,10 +15,10 @@ COPY ./support/.bashrc /root/.bashrc
 COPY ./support/environment /etc/environment
 
 # Necessary packages
-RUN yum -y update; yum clean all;
-RUN yum -y install epel-release; yum clean all
-RUN cd /root; rpm -Uvh remi-release-6.rpm
-RUN yum -y update; yum clean all;
+RUN yum -y update; yum clean all; \
+    yum -y install epel-release; yum clean all; \
+    cd /root; rpm -Uvh remi-release-6.rpm; \
+    yum -y update; yum clean all;
 
 # Setup locale
 RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8; \

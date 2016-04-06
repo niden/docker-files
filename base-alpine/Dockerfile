@@ -14,13 +14,8 @@ RUN apk add --no-cache --update \
     curl \
     docker-bash-completion \
     grep \
-    git \
-    htop \
     less \
-    make \
     nano \
-    openssh-client \
-    sed \
     wget
 
 # Timezone
