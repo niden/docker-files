@@ -8,7 +8,8 @@ RUN yum -y update; \
     yum clean all; \
     rm -rf /tmp/* /var/tmp/* /var/lib/yum/history/*
 
-# Define port
+# Define user and port
+USER memcached
 EXPOSE 11211
 
 # Define default command
