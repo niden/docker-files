@@ -11,5 +11,4 @@ EXPOSE 11211
 
 # Define default command
 ENTRYPOINT ["memcached"]
-#CMD ["/usr/bin/memcached", "-u", "memcache", "-v"]
 
