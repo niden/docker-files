@@ -12,8 +12,9 @@ RUN apk add --no-cache --update \
     php-openssl \
     php-json \
     php-phar \
-    php-dom  && \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+    php-dom \
+    php-xml; \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Memory Limit
 COPY ./support/basic.ini /etc/php/conf.d/
