@@ -19,7 +19,7 @@ RUN apk add --no-cache --update \
     wget
 
 # Timezone
-RUN apk add --update tzdata && \
-    cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
-    echo "${TIMEZONE}" | tee /etc/timezone && \
+RUN apk add --update tzdata; \
+    cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime; \
+    echo "${TIMEZONE}" | tee /etc/timezone; \
     apk del tzdata
