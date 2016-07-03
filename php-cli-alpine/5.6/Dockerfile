@@ -36,7 +36,7 @@ WORKDIR /www
 # Expose volumes
 VOLUME ["/www"]
 
-EXPOSE 80
+EXPOSE 10000
 
 ENTRYPOINT ["/usr/bin/php"]
 CMD ["-v"]
