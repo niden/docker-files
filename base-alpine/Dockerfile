@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:latest
 
 MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
 LABEL      "Credits"="Serghei Iakovlev <serghei@phalconphp.com>"
@@ -13,6 +13,7 @@ RUN apk add --no-cache --update \
     bash-completion \
     curl \
     docker-bash-completion \
+    git \
     grep \
     less \
     nano \
