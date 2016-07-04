@@ -17,10 +17,13 @@ RUN apk add --no-cache --update \
     grep \
     less \
     nano \
-    wget
-
-# Timezone
-RUN apk add --update tzdata; \
+    tzdata \
+    wget; \
     cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime; \
     echo "${TIMEZONE}" | tee /etc/timezone; \
-    apk del tzdata
+    apk del tzdata; \
+    mkdir /data
+
+WORKDIR /data
+
+VOLUME ["/data"]
