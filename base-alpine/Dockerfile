@@ -21,9 +21,4 @@ RUN apk add --no-cache --update \
     wget; \
     cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime; \
     echo "${TIMEZONE}" | tee /etc/timezone; \
-    apk del tzdata; \
-    mkdir /data
-
-WORKDIR /data
-
-VOLUME ["/data"]
+    apk del tzdata

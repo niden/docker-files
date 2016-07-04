@@ -1,5 +1,5 @@
 #!/bin/sh
-mkdir -p /data/log
+mkdir -p /data/logs
 mkdir -p /data/db
 mkdir -p /data/conf
 mkdir -p /var/run/mysqld
