@@ -1,6 +1,6 @@
 # Dockerfiles
 
-This repository contains **Dockerfiles** of various images based on [Alpine Linux][1] 3.3 and [CentOS][2] 6.x and published to the public [Docker Hub Registry][3].
+This repository contains **Dockerfiles** of various images based on [Alpine Linux][1] 3.4 published to the public [Docker Hub Registry][3].
 
 ## Prerequisites
 
