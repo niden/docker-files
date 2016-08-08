@@ -9,13 +9,11 @@ This repository contains **Dockerfiles** of various images based on [Alpine Linu
 
 ## Images 
 
-| Pull                                  | Usage                                                                       | Description                        |
+|| Pull                                  | Usage                                                                       | Description                        |
 |---------------------------------------|-----------------------------------------------------------------------------|------------------------------------|
-| `docker pull niden/base-alpine`       | `docker run --name="wolverine" -it niden/base-alpine /bin/bash`             | Compact Docker base image Alpine   |
-| `docker pull niden/base-centos6`      | `docker run --name="gambit" -it niden/base-centos6 /bin/bash`               | Compact Docker base image CentOS 6 |
-| `docker pull niden/memcached-alpine`  | `docker run -d -P --name="storm" -it niden/memcached-alpine`                | Memcached server on Alpine         |
-| `docker pull niden/memcached-centos6` | `docker run -d -P --name="cyclops" -it niden/memcached-centos6`             | Memcached server on CentOS 6       |
-| `docker pull niden/composer-alpine`   | `docker run -it --rm --name="banshee" -v $(pwd):/app niden/composer-alpine` | Composer on Alpine                 |
+|[![](https://images.microbadger.com/badges/version/niden/base-alpine.svg)](http://microbadger.com/images/niden/base-alpine "Get your own version badge on microbadger.com")| `docker pull niden/base-alpine`       | `docker run --name="wolverine" -it niden/base-alpine /bin/bash`             | Compact Docker base image Alpine   |
+|| `docker pull niden/memcached-alpine`  | `docker run -d -P --name="storm" -it niden/memcached-alpine`                | Memcached server on Alpine         |
+|| `docker pull niden/composer-alpine`   | `docker run -it --rm --name="banshee" -v $(pwd):/app niden/composer-alpine` | Composer on Alpine                 |
 
 
 [1]: http://www.alpinelinux.org/
