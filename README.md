@@ -9,11 +9,11 @@ This repository contains **Dockerfiles** of various images based on [Alpine Linu
 
 ## Images 
 
-|| Pull                                  | Usage                                                                       | Description                        |
+| Pull                                  | Usage                                                                       | Description                        |
 |---------------------------------------|-----------------------------------------------------------------------------|------------------------------------|
-|[![](https://images.microbadger.com/badges/version/niden/base-alpine.svg)](http://microbadger.com/images/niden/base-alpine "Get your own version badge on microbadger.com")| `docker pull niden/base-alpine`       | `docker run --name="wolverine" -it niden/base-alpine /bin/bash`             | Compact Docker base image Alpine   |
-|| `docker pull niden/memcached-alpine`  | `docker run -d -P --name="storm" -it niden/memcached-alpine`                | Memcached server on Alpine         |
-|| `docker pull niden/composer-alpine`   | `docker run -it --rm --name="banshee" -v $(pwd):/app niden/composer-alpine` | Composer on Alpine                 |
+| `docker pull niden/base-alpine`       | `docker run --name="wolverine" -it niden/base-alpine /bin/bash`             | Compact Docker base image Alpine   |
+| `docker pull niden/memcached-alpine`  | `docker run -d -P --name="storm" -it niden/memcached-alpine`                | Memcached server on Alpine         |
+| `docker pull niden/composer-alpine`   | `docker run -it --rm --name="banshee" -v $(pwd):/app niden/composer-alpine` | Composer on Alpine                 |
 
 
 [1]: http://www.alpinelinux.org/
