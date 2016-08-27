@@ -17,8 +17,8 @@ RUN apk add --no-cache --update \
     grep \
     less \
     nano \
-    tzdata \
     wget; \
+    apk add --update tzdata; \
     cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime; \
     echo "${TIMEZONE}" | tee /etc/timezone; \
     apk del tzdata
