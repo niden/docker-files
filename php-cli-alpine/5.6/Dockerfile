@@ -13,28 +13,32 @@ RUN apk add --no-cache --update \
     php5-json \
     php5-mcrypt \
     php5-opcache \
+    php5-openssl \
     php5-pdo \
     php5-pdo_mysql \
     php5-pdo_sqlite \
     php5-pdo_pgsql \
     php5-pdo_odbc \
-    php5-phalcon \
-    php5-pear \
     php5-xml; \
+    apk add --no-cache \
+            --update \
+            --repository http://dl-3.alpinelinux.org/alpine/edge/community/ \
+            --allow-untrusted \
+    php5-xdebug; \
     apk add --no-cache \
             --update \
             --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
             --allow-untrusted \
-    php5-memcached \
-    php5-xdebug; \
-    mkdir /www
+    php5-memcached; \
+    mkdir /www; \
+    mkdir /data
 
 COPY ./support/etc /etc
 
 WORKDIR /www
 
 # Expose volumes
-VOLUME ["/www"]
+VOLUME ["/www", "/data"]
 
 EXPOSE 10000
 
