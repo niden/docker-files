@@ -1,4 +1,4 @@
-FROM niden/base-alpine
+FROM niden/php-cli:5.6
 
 MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
 
@@ -7,17 +7,13 @@ ENV PATH $COMPOSER_HOME/vendor/bin:$PATH
 
 # Necessary packages
 RUN apk add --no-cache --update \
-    php \
-    php-curl \
-    php-openssl \
-    php-json \
-    php-phar \
-    php-dom \
-    php-xml; \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    php5-dom \
+    php5-phar; \
+    rm /etc/php5/conf.d/xdebug.ini; \
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer; \
+    chmod +x /usr/local/bin/composer
 
-# Memory Limit
-COPY ./support/basic.ini /etc/php/conf.d/
+COPY ./support/etc /etc
 
 # Display version information
 RUN composer --ansi --version
