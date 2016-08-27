@@ -4,6 +4,9 @@ MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
 LABEL      "Credits"="Serghei Iakovlev <serghei@phalconphp.com>"
 
 RUN apk add --no-cache --update \
+    sudo \
+    autoconf \
+    build-base \
     libxml2 \
     php5-cli \
     php5-common \
@@ -30,6 +33,10 @@ RUN apk add --no-cache --update \
             --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
             --allow-untrusted \
     php5-memcached; \
+    git clone --depth=1 -v https://github.com/phalcon/cphalcon /tmp/cphalcon; \
+    cd /tmp/cphalcon/ext; \
+    sudo ./install; \
+    apk del sudo autoconf build-base; \
     mkdir /www; \
     mkdir /data
 
