@@ -36,9 +36,11 @@ RUN apk add --no-cache --update \
     git clone --depth=1 -v https://github.com/phalcon/cphalcon /tmp/cphalcon; \
     cd /tmp/cphalcon/ext; \
     sudo ./install; \
+    cd /root; \
+    rm -fR /tmp/*; \
     apk del sudo autoconf build-base; \
-    mkdir /www; \
-    mkdir /data
+    mkdir -p /www; \
+    mkdir -p /data
 
 COPY ./support/etc /etc
 
