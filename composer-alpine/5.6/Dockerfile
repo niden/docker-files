@@ -6,7 +6,7 @@ ENV COMPOSER_HOME /home/composer
 ENV PATH $COMPOSER_HOME/vendor/bin:$PATH
 
 # Necessary packages
-RUN addgroup -S composer; \
+RUN addgroup -g 1000 composer; \
     adduser -u 1000 -D -G composer composer; \
     apk add --no-cache --update \
     php5-dom \
