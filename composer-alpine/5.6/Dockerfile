@@ -1,4 +1,4 @@
-FROM niden/php-cli-alpine:5.6
+FROM niden/php-cli-alpine:base
 
 MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
 
