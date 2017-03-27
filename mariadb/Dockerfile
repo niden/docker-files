@@ -1,4 +1,4 @@
-FROM niden/base-alpine
+FROM niden/base
 
 MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
 
