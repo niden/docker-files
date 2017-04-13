@@ -3,7 +3,7 @@ FROM niden/php-cli-alpine:base
 MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
 
 # Expose volumes
-VOLUME ["/www", "/data"]
+VOLUME ["/app"]
 
 EXPOSE 10000
 
