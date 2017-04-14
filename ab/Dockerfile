@@ -5,4 +5,5 @@ MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
 RUN apk add --no-cache --update \
     apache2-utils
 
-CMD ["ab"]
+ENTRYPOINT ["ab"]
+
