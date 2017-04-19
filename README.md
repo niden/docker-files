@@ -1,6 +1,6 @@
 # Dockerfiles
 
-This repository contains **Dockerfiles** of various images based on [Alpine Linux][1] 3.4 published to the public [Docker Hub Registry][3].
+This repository contains **Dockerfiles** of various images based on [Alpine Linux][1] latest published in [Docker Hub Registry][3].
 
 ## Prerequisites
 
@@ -8,19 +8,49 @@ This repository contains **Dockerfiles** of various images based on [Alpine Linu
 2. Download an automated build from the public [Docker Hub Registry][3]: 
 
 ## Images 
+### Utilities
+#### ab
+```
+docker pull niden/ab
+docker run --rm -it --net host --name ab niden/ab
+```
 
-| Pull                                  | Usage                                                                       | Description                        |
-|---------------------------------------|-----------------------------------------------------------------------------|------------------------------------|
-| `docker pull niden/base-alpine`       | `docker run --name="wolverine" -it niden/base-alpine /bin/bash`             | Compact Docker base image Alpine   |
-| `docker pull niden/memcached-alpine`  | `docker run -d -P --name="storm" -it niden/memcached-alpine`                | Memcached server on Alpine         |
-| `docker pull niden/composer-alpine`   | `docker run -it --rm --name="banshee" -v $(pwd):/app niden/composer-alpine` | Composer on Alpine                 |
+#### htop
+```
+docker pull niden/htop
+docker run --rm -it --pid host --net none --name htop niden/htop
+```
+
+#### nmap
+```
+docker pull niden/nmap
+docker run --rm -it --net host --name nmap niden/nmap
+```
+
+#### tcptraceroute
+```
+docker pull niden/tcptraceroute
+docker run --rm -it --net host --name tcptraceroute niden/tcptraceroute
+```
+
+### Services
+#### Memcached
+```
+docker pull niden/memcached`
+docker run -d --net host --name memcached niden/memcached
+```
+
+#### nginx
+```
+docker pull niden/nginx
+docker run -d \
+       -v /home/niden/web/logs/:/data/logs \
+       -v /home/niden/web/config/:/data/config \
+       -v /home/niden/web/sites/:/data/sites \
+       --name niden_nginx niden/nginx
+```
 
 
 [1]: http://www.alpinelinux.org/
-[2]: https://centos.org/
 [3]: https://hub.docker.com/
 [4]: https://www.docker.com/
-[5]: https://hub.docker.com/_/alpine/
-[6]: https://hub.docker.com/_/centos/
-[7]: https://hub.docker.com/r/niden/base-alpine/
-[8]: https://hub.docker.com/r/niden/base-centos6/
