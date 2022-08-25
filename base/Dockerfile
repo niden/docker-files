@@ -1,7 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
-LABEL      "Credits"="Serghei Iakovlev <serghei@phalconphp.com>"
+LABEL maintainer="Nikolaos Dimopoulos <nikos@niden.net>"
 
 ENV HOME     /root
 ENV TIMEZONE "America/New_York"
