@@ -6,6 +6,7 @@ This repository contains **Dockerfiles** of various images based on [Alpine Linu
 
 1. Install [Docker][4]
 2. Download an automated build from the public [Docker Hub Registry][3]: 
+3. If using containers that require display, you need `sudo xhost +local:docker`
 
 ## Images 
 ### Utilities
@@ -15,10 +16,46 @@ docker pull niden/ab
 docker run --rm -it --net host --name ab niden/ab
 ```
 
+#### curl
+```
+docker pull niden/htop
+docker run --rm -it --pid host --net none --name curl niden/curl
+```
+
+#### gimp
+```
+docker pull niden/gimp
+docker run -d \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --net host \
+    -e "DISPLAY=unix${DISPLAY}" \
+    -v "${HOME}:/root" \
+    -e GDK_SCALE \
+    -e GDK_DPI_SCALE \
+    --name niden \
+    niden/gimp
+```
+
 #### htop
 ```
 docker pull niden/htop
 docker run --rm -it --pid host --net none --name htop niden/htop
+```
+
+#### libreoffice
+```
+docker pull niden/nmap
+docker run -d \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --net host \
+    -e "DISPLAY=unix${DISPLAY}" \
+    -v "${HOME}:/root" \
+    -e GDK_SCALE \
+    -e GDK_DPI_SCALE \
+    --name niden_libreoffice \
+    niden/libreoffice
 ```
 
 #### nmap
