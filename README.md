@@ -43,9 +43,15 @@ docker pull niden/htop
 docker run --rm -it --pid host --net none --name htop niden/htop
 ```
 
+#### jq
+```
+docker pull niden/jq
+docker run --rm -it --pid host --net none --name jq niden/jq
+```
+
 #### libreoffice
 ```
-docker pull niden/nmap
+docker pull niden/libreoffice
 docker run -d \
     -v /etc/localtime:/etc/localtime:ro \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
