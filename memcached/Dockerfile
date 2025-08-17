@@ -1,6 +1,6 @@
-FROM niden/base
+FROM alpine:3.20
 
-MAINTAINER Nikolaos Dimopoulos <nikos@niden.net>
+LABEL maintainer="Nikolaos Dimopoulos <nikos@niden.net>"
 
 # Necessary packages
 RUN adduser -D memcache; \
@@ -12,4 +12,3 @@ EXPOSE 11211
 
 # Define default command
 ENTRYPOINT ["memcached"]
-
