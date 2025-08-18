@@ -36,11 +36,18 @@ RUN set -eux && \
     apt update -y && \
     apt upgrade -y && \
     apt install --no-install-recommends -yq \
-    curl \
-    nano \
-    sudo \
-    unzip \
-    wget && \
+        curl \
+        gnupg \
+        nano \
+        sudo \
+        unixodbc-dev \
+        unzip \
+        wget && \
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && \
+    mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg && \
+    curl -s https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+    apt update -y && \
+    ACCEPT_EULA=Y apt install -y msodbcsql17 && \
 # Install php extensions \
     install-php-extensions \
       apcu \
@@ -54,8 +61,10 @@ RUN set -eux && \
       pcov \
       pdo_mysql \
       pdo_pgsql \
+      pdo_sqlsrv \
       pgsql \
       redis \
+      sqlsrv \
       xsl \
       yaml \
       zip \

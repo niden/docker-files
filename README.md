@@ -83,14 +83,16 @@ docker pull niden/memcached`
 docker run -d --net host --name memcached niden/memcached
 ```
 
-#### nginx
+#### Memcached
 ```
-docker pull niden/nginx
-docker run -d \
-       -v /home/niden/web/logs/:/data/logs \
-       -v /home/niden/web/config/:/data/config \
-       -v /home/niden/web/sites/:/data/sites \
-       --name niden_nginx niden/nginx
+docker pull niden/mariadb`
+docker run -d --net host --name mariadb niden/mariadb
+```
+
+#### PHP (cli)
+```
+docker pull niden/niden-php
+docker run -it --rm $(pwd):/app niden-php:8.4 /bin/bash
 ```
 
 
