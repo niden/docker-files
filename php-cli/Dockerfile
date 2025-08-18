@@ -51,6 +51,7 @@ RUN set -eux && \
 # Install php extensions \
     install-php-extensions \
       apcu \
+      bcmath \
       gettext \
       gd \
       igbinary \
